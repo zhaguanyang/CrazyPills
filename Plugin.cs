@@ -27,7 +27,7 @@ namespace CrazyPills
 
             _handler = new EventHandlers();
 
-            PlayerE.ItemUsed += _handler.OnItemUsed;
+            PlayerE.UsedItem += _handler.OnItemUsed;
             PlayerE.ChangingRole += _handler.OnChangingRole;
 
             base.OnEnabled();
@@ -35,7 +35,7 @@ namespace CrazyPills
 
         public override void OnDisabled()
         {
-            PlayerE.ItemUsed -= _handler.OnItemUsed;
+            PlayerE.UsedItem -= _handler.OnItemUsed;
             PlayerE.ChangingRole -= _handler.OnChangingRole;
 
             _handler = null;
